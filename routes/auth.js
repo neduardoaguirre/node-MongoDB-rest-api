@@ -8,9 +8,7 @@ router.post(
   '/',
   [
     check('email', 'E-mail is required').isEmail(),
-    check('password', 'Password is required').isLength({
-      min: 6,
-    }),
+    check('password', 'Password is required').not().isEmpty(),
   ],
   authController.authenticateUser
 );

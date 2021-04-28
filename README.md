@@ -75,7 +75,7 @@ Press CTRL + C to stop the process.
   - URL: http://localhost:4000/api/users
   - Method: POST
   - Body: raw + JSON (application/json)
-  - Body Content: `{ "name": "usertest", "email":"usertest@usertest.com", "password": "123456"}`
+  - Body Content: `{ "name": "usertest", "email":"usertest@usertest.com", "password": "Pass1234"}`
   - Body Response: `{ "token": "token_value" }`
 
 - User login:
@@ -83,7 +83,7 @@ Press CTRL + C to stop the process.
   - URL: http://localhost:4000/api/auth
   - Method: POST
   - Body: raw + JSON (application/json)
-  - Body Content: `{ "email":"usertest@usertest.com", "password": "123456"}`
+  - Body Content: `{ "email":"usertest@usertest.com", "password": "Pass1234"}`
   - Body Response: `{ "token": "token_value" }`
 
 - Get logged user:
@@ -106,8 +106,6 @@ Press CTRL + C to stop the process.
 
   - URL: http://localhost:4000/api/customers
   - Method: GET
-  - Body: raw + JSON (application/json)
-  - Body Content: `{ "firstName": "value", "lastName": "value","email": "value", "document": "value", "address": "value"}`
   - Headers: `KEY: x-auth-token` - `VALUE: token_value`
   - Body Response: `{"customers": [{"_id": "id-customer", "firstName": "value", "lastName": "value", "email": "value", "document": "value", "address": "value", "created": "date", "createdBy": "id-user", "__v": 0},{...other customer},{...other customer}]}`
 
@@ -116,7 +114,7 @@ Press CTRL + C to stop the process.
   - URL: http://localhost:4000/api/customers/id-customer
   - Method: GET
   - Headers: `KEY: x-auth-token` - `VALUE: token_value`
-  - Body Response: `{"customers": [{"_id": "id-customer", "firstName": "value", "lastName": "value", "email": "value", "document": "value", "address": "value", "created": "date", "createdBy": "id-user", "__v": 0}]}`
+  - Body Response: `{"customer": [{"_id": "id-customer", "firstName": "value", "lastName": "value", "email": "value", "document": "value", "address": "value", "created": "date", "createdBy": "id-user", "__v": 0}]}`
 
 - Edit a customer:
 
@@ -125,7 +123,7 @@ Press CTRL + C to stop the process.
   - Body: raw + JSON (application/json)
   - Body Content: `{ "firstName": "new-value", "lastName": "new-value","email": "new-value", "document": "new-value", "address": "new-value"}`
   - Headers: `KEY: x-auth-token` - `VALUE: token_value`
-  - Body Response: `{"_id": "id-customer", "firstName": "new-value", "lastName": "new-value", "email": "new-value", "document": "new-value", "address": "new-value", "created": "date", "createdBy": "id-user", "__v": 0}`
+  - Body Response: `{"customer": [{"_id": "id-customer", "firstName": "value", "lastName": "value", "email": "value", "document": "value", "address": "value", "created": "date", "createdBy": "id-user", "__v": 0}]}`
 
 - Delete a customer:
   - URL: http://localhost:4000/api/customers/id-customer
