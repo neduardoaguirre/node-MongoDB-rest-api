@@ -57,7 +57,7 @@ exports.updateCustomer = async (req, res) => {
     );
     res.json({ customer });
   } catch (error) {
-    console.log('Sorry, this user does not exist.');
+    res.status(500).send('Sorry, this user does not exist.');
   }
 };
 

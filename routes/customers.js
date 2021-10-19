@@ -14,7 +14,8 @@ router.post(
     check('document', 'The document field is required').not().isEmpty(),
     check('address', 'The address field is required').not().isEmpty(),
   ],
-  customersController.newCustomer
+  customersController.newCustomer,
+  customersController.updateCustomer
 );
 
 router.get('/', auth, customersController.getCustomers);
